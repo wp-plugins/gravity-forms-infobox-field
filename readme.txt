@@ -8,11 +8,11 @@ Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
+Extends the Gravity Forms plugin - adding an infobox field that can be used to display information throughout the form.
 
 == Description ==
 
-This plugin extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
+This plugin extends the Gravity Forms plugin - adding an infobox field that can be used to display information throughout the form.
 
 Infoboxes can be placed anywhere in a form, like you would any other form field.
 
