@@ -1,0 +1,48 @@
+.gform_infobox {
+    border-radius: 5px;
+    padding: 5px 10px 5px 60px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	min-height: 68px;
+}
+.gform_infobox_help{
+	background: url("help.png") no-repeat scroll 5px 10px #9fdaee;
+    border: 1px solid #2bb0d7;
+}
+
+.gform_infobox_critical{
+	background: url("critical.png") no-repeat scroll 5px 10px #ffccaa;
+    border: 1px solid #ff3334;
+}
+.gform_infobox_note{
+	background: url("note.png") no-repeat scroll 2px 10px ;
+}
+
+.gform_infobox_information{
+	background: url("info.png") no-repeat scroll 5px 10px #9fdaee;
+    border: 1px solid #2bb0d7;
+}
+
+.gform_infobox_warning{
+	background: url("warning.png") no-repeat scroll 5px 10px #ffffaa;
+    border: 1px solid #ffad33;
+}
+
+.gform_infobox_highlight{
+	background: none repeat scroll 0 0 #ffffaa;
+    border: 1px solid #ffad33;
+	padding-left: 10px;
+}
+
+.gform_infobox .gfield_label, .gform_infobox .gfield_description {
+    margin: 0 !important;
+	padding: 0 !important;
+}
+
+.gfield_infobox_more_info_button {
+    text-decoration: underline;
+}
+
+.gfield_infobox_more_info_button:before {
+    content: "▼";
+}
