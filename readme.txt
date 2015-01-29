@@ -1,10 +1,10 @@
-=== Gravity Forms - Infobox field ===
+=== Plugin Name ===
 Contributors: ovann86
 Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
 Requires at least: 4.1
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,7 +53,7 @@ This will give this infobox a white background.
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1 =
 * FIX: 'Infobox type' and 'More information' fields not displaying saved data on reload.
 * IMPROVEMENT: Changed More information text area to display with inline-block, rather than block - this allows for more complicated HTML to be included in the More information text area, such as tables.
 * IMPROVEMENT: Added CSS styles to give tables inside of the More information text area a white background and slight padding on th and td.
@@ -63,7 +63,7 @@ This will give this infobox a white background.
 
 == Upgrade Notice ==
 
-= 1.0.1 =
+= 1.1 =
 * FIX: 'Infobox type' and 'More information' fields not displaying saved data on reload.
 * IMPROVEMENT: Changed More information text area to display with inline-block, rather than block - this allows for more complicated HTML to be included in the More information text area, such as tables.
 * IMPROVEMENT: Added CSS styles to give tables inside of the More information text area a white background and slight padding on th and td.
