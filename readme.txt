@@ -1,5 +1,5 @@
 === Gravity Forms - Infobox field ===
-Stable tag: 1.1
+Stable tag: 1.2
 Contributors: ovann86
 Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
