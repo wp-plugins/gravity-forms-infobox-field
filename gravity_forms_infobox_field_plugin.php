@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Gravity Forms - Infobox field
-Version: 1.2.1
+Version: 1.2.2
 Description: Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
 Author: Adrian Gordon
 Author URI: http://www.itsupportguides.com 
@@ -75,10 +75,14 @@ if (!class_exists('ITSP_GF_Infobox')) {
 				fieldSettings["Infobox"] = ".label_setting, .description_setting, .css_class_setting, .infobox_type_field_setting, .infobox_more_info_field_setting, .conditional_logic_field_setting"; 
 		 
 				//custom field options				
-				jQuery(document).bind("gform_load_field_settings", function(event, field, form){					
+				jQuery(document).bind("gform_load_field_settings", function(event, field, form){
+					if ('Infobox' == field['type']) {
 					jQuery("#infobox_type_field_setting").val(field["infobox_type_field_setting"] == undefined ? "help" : field["infobox_type_field_setting"]);
 					jQuery("#infobox_more_info_field").val(field["infobox_more_info_field"] == undefined ? "" : field["infobox_more_info_field"]);
-					
+						if (jQuery("#field_css_class").val() == '') {
+							jQuery("#field_css_class").val("exclude");				
+						}
+					}
 				});
 			});
 		 
@@ -257,4 +261,3 @@ if (!class_exists('ITSP_GF_Infobox')) {
     }
     $ITSP_GF_Infobox = new ITSP_GF_Infobox();
 }
-?>
