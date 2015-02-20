@@ -53,7 +53,7 @@ This will give this infobox a white background.
 
 == Changelog ==
 
-= 1.2.1 =
+= 1.2.2 =
 * IMPROVEMENT: Added default 'Custom CSS Class' of 'exclude' so that the Infobox field does not appear in PDF's created using the Gravity PDF plugin (previously Gravity Forms PDF extended).
 
 = 1.2.1 =
