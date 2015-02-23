@@ -4,7 +4,7 @@ Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
 Requires at least: 4.1
 Tested up to: 4.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,15 +21,15 @@ Each infobox can be styled using the 'Infobox type' field, options include  - he
 == Installation ==
 
 1. This plugin requires the Gravity Forms plugin, installed and activated
-1. Install plugin from WordPress administration or upload folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in the WordPress administration
-1. Open the form you want to add an infobox to
-1. In the 'Standard fields' section you will find a new field option - 'Infobox'
-1. Add the field to the location required
-1. Use the 'Field Label' field for the infobox title
-1. Use the 'Infobox type' field to select a style
-1. Use the 'Description' field for the infobox text
-1. Use the 'More information' field for additional infobox text - this text will be hidden by default and expanded when the user clicks on the 'More information' link
+2. Install plugin from WordPress administration or upload folder to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in the WordPress administration
+4. Open the form you want to add an infobox to
+5. In the 'Standard fields' section you will find a new field option - 'Infobox'
+6. Add the field to the location required
+7. Use the 'Field Label' field for the infobox title
+8. Use the 'Infobox type' field to select a style
+9. Use the 'Description' field for the infobox text
+10. Use the 'More information' field for additional infobox text - this text will be hidden by default and expanded when the user clicks on the 'More information' link
 
 == Frequently Asked Questions ==
 
@@ -45,6 +45,12 @@ For example, if you apply the CSS class name of custombox - you would add the fo
 
 This will give this infobox a white background.
 
+= How to use with Gravity PDF (previously Gravity Forms PDF extended) =
+
+To exclude the infoboxes from PDF's created using Gravity PDF ensure that the Infobox has a Custom CSS Class of 'exclude'.
+
+This can be added in the form editor in the 'Appearance' tab.
+
 == Screenshots ==
 
 1. This screen shot shows several infoboxes in a form. There are six different styles that can selected. More information can be displayed in a text area that is hidden until the user clicks on the 'More information' link.
@@ -52,6 +58,9 @@ This will give this infobox a white background.
 3. This screen shot shows the infobox button, in the 'Standard Fields' section.
 
 == Changelog ==
+
+= 1.2.2 =
+* IMPROVEMENT: Added default 'Custom CSS Class' of 'exclude' so that the Infobox field does not appear in PDF's created using the Gravity PDF plugin (previously Gravity Forms PDF extended).
 
 = 1.2.1 =
 * FIX: 'Infobox type' and 'More information' fields not displaying saved data on reload.
