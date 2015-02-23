@@ -45,6 +45,12 @@ For example, if you apply the CSS class name of custombox - you would add the fo
 
 This will give this infobox a white background.
 
+= How to use with Gravity PDF (previously Gravity Forms PDF extended) =
+
+To exclude the infoboxes from PDF's created using Gravity PDF ensure that the Infobox has a Custom CSS Class of 'exclude'.
+
+This can be added in the form editor in the 'Appearance' tab.
+
 == Screenshots ==
 
 1. This screen shot shows several infoboxes in a form. There are six different styles that can selected. More information can be displayed in a text area that is hidden until the user clicks on the 'More information' link.
