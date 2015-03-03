@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Gravity Forms - Infobox field
-Version: 1.2.2
+Version: 1.2.3
 Description: Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
 Author: Adrian Gordon
 Author URI: http://www.itsupportguides.com 
@@ -201,7 +201,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
 				<script>
 				jQuery(function ($) {
 				$('[class*=gfield_infobox_more_info_]').on('click',function(e){
-				$('.'+ e.target.classList[1]+'_box').toggleClass('gfield_infobox_more_display'); 
+				$(this).next().toggleClass('gfield_infobox_more_display'); 
 					});
 				});
 			</script>
