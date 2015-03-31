@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Gravity Forms - Infobox field
-Version: 1.2.3
+Version: 1.2.4
 Description: Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
 Author: Adrian Gordon
 Author URI: http://www.itsupportguides.com 
@@ -15,7 +15,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
     {
 	private static $name = 'Gravity Forms - Infobox field';
     private static $slug = 'itsp_gf_infobox_field';
-	private static $version = '1.2.1';
+	private static $version = '1.2.4';
         /**
          * Construct the plugin object
          */
@@ -223,7 +223,11 @@ if (!class_exists('ITSP_GF_Infobox')) {
                     
                 }
                 if ((isset($field["infobox_more_info_field"])) && ($field["infobox_more_info_field"]) <> "") {
-                    $content .= "<div class='gfield_description gfield_infobox_more_info_" . $field["id"] . " gfield_infobox_more_info_button'>More information</div>";
+                    if ((isset($field["label"])) && ($field["label"]) <> "") {
+						$content .= "<div class='gfield_description gfield_infobox_more_info_" . $field["id"] . " gfield_infobox_more_info_button'><a class='target-self' href='javascript:void(0)' title='More information - ".$field["label"]."' aria-label='More information - ".$field["label"]."'>More information</a></div>";
+					} else {
+						$content .= "<div class='gfield_description gfield_infobox_more_info_" . $field["id"] . " gfield_infobox_more_info_button'><a class='target-self' href='javascript:void(0)'>More information</a></div>";
+					}
                     $content .= "<div style='display: none;' class='gfield_description gfield_infobox_more_info_" . $field["id"] . "_box'>" . $field["infobox_more_info_field"] . "</div>";
                     
                 }

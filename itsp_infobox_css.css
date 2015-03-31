@@ -42,7 +42,7 @@
 }
 
 .gfield_infobox_more_info_button {
-    text-decoration: underline;
+ /* removed in version 1.2.4  text-decoration: underline;  */
 }
 
 .gfield_infobox_more_info_button:before {

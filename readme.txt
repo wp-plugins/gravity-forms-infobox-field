@@ -4,7 +4,7 @@ Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
 Requires at least: 4.1
 Tested up to: 4.1
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ This can be added in the form editor in the 'Appearance' tab.
 3. This screen shot shows the infobox button, in the 'Standard Fields' section.
 
 == Changelog ==
+
+= 1.2.4 =
+* Fix: 'More information' link was not keyboard accessible.
 
 = 1.2.3 =
 * FIX: Modified JavaScript for 'More Information' click so that it will work in older versions of Internet Explorer (e.g. IE9).
