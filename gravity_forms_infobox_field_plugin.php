@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Infobox field for Gravity Forms
-Version: 1.2.5
+Version: 1.3.0
 Description: Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
 Author: Adrian Gordon
 Author URI: http://www.itsupportguides.com 
@@ -15,7 +15,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
     {
 	private static $name = 'Infobox field for Gravity Forms';
     private static $slug = 'itsp_gf_infobox_field';
-	private static $version = '1.2.5';
+	private static $version = '1.3.0';
         /**
          * Construct the plugin object
          */
@@ -222,8 +222,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
 		/**
          * Displays infobox field
          */
-        public static function infobox_display_field($content, $field, $value, $lead_id, $form_id)
-        {     
+        public static function infobox_display_field($content, $field, $value, $lead_id, $form_id) {     
             if ((!is_admin()) && ($field['type'] == 'Infobox')) {
                 $content = "";
                 if ((isset($field["label"])) && ($field["label"]) <> "") {
@@ -251,7 +250,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
          */
 		public static function admin_warnings() {
 			if ( !self::is_gravityforms_installed() ) {
-				$message = __('Requires Gravity Forms to be installed.', self::$slug);
+				$message = __('requires Gravity Forms to be installed.', self::$slug);
 			} 
 			
 			if (empty($message)) {
@@ -259,20 +258,27 @@ if (!class_exists('ITSP_GF_Infobox')) {
 			}
 			?>
 			<div class="error">
+				<h3>Warning</h3>
 				<p>
 					<?php _e('The plugin ', self::$slug); ?><strong><?php echo self::$name; ?></strong> <?php echo $message; ?><br />
-					<?php _e('Please ',self::$slug); ?><a href="http://www.gravityforms.com/"><?php _e(' download the latest version',self::$slug); ?></a><?php _e(' of Gravity Forms and try again.',self::$slug) ?>
+					<?php _e('Please ',self::$slug); ?><a target="_blank" href="http://www.gravityforms.com/"><?php _e(' download the latest version',self::$slug); ?></a><?php _e(' of Gravity Forms and try again.',self::$slug) ?>
 				</p>
 			</div>
 			<?php
 		} // END admin_warnings
 		
-        /*
+		/*
          * Check if GF is installed
          */
-        private static function is_gravityforms_installed()
-        {
-            return class_exists('GFAPI');
+        private static function is_gravityforms_installed() {
+			if ( !function_exists( 'is_plugin_active' ) || !function_exists( 'is_plugin_active_for_network' ) ) {
+				require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+			}
+			if (is_multisite()) {
+				return (is_plugin_active_for_network('gravityforms/gravityforms.php') || is_plugin_active('gravityforms/gravityforms.php') );
+			} else {
+				return is_plugin_active('gravityforms/gravityforms.php');
+			}
         } // END is_gravityforms_installed
     }
     $ITSP_GF_Infobox = new ITSP_GF_Infobox();

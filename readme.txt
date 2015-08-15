@@ -4,7 +4,7 @@ Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
 Requires at least: 4.1
 Tested up to: 4.2.4
-Stable tag: 1.2.5
+Stable tag: 1.3.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,10 @@ This can be added in the form editor in the 'Appearance' tab.
 3. This screen shot shows the infobox button, in the 'Standard Fields' section.
 
 == Changelog ==
+
+= 1.3.0 =
+* FIX: Fix issue with CSS and images not loading - in update 1.2.5 the new directories did not go out with the update.
+* FEATURE: Add support for multisite WordPress installations.
 
 = 1.2.5 =
 * FIX: Add 'data-type' property to Infobox button in form editor - provides support for old and new versions of Gravity Forms.
