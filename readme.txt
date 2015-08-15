@@ -1,10 +1,10 @@
-=== Gravity Forms - Infobox field ===
+=== Infobox field for Gravity Forms ===
 Contributors: ovann86
 Donate link: http://www.itsupportguides.com/
 Tags: gravity forms
 Requires at least: 4.1
-Tested up to: 4.1
-Stable tag: 1.2.4
+Tested up to: 4.2.4
+Stable tag: 1.2.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,8 +59,16 @@ This can be added in the form editor in the 'Appearance' tab.
 
 == Changelog ==
 
+= 1.2.5 =
+* FIX: Add 'data-type' property to Infobox button in form editor - provides support for old and new versions of Gravity Forms.
+* MAINTENANCE: Place CSS and images into their own directories.
+* MAINTENANCE: Change CSS to load using wp_enqueue_style
+* MAINTENANCE: Change name from 'Gravity Forms - Infobox field' to 'Infobox field for Gravity Forms'
+* MAINTENANCE: Resolve various PHP errors that were appearing in debug mode, but did not affect functionality.
+* MAINTENANCE: Change constructor so plugin load is delayed using the 'plugins_loaded' action - this ensures the plugin loads after Gravity Forms has loaded and functions correctly.
+
 = 1.2.4 =
-* Fix: 'More information' link was not keyboard accessible.
+* FIX: 'More information' link was not keyboard accessible.
 
 = 1.2.3 =
 * FIX: Modified JavaScript for 'More Information' click so that it will work in older versions of Internet Explorer (e.g. IE9).

@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Gravity Forms - Infobox field
-Version: 1.2.4
+Plugin Name: Infobox field for Gravity Forms
+Version: 1.2.5
 Description: Extends the Gravity Forms plugin, adding an infobox field that can be used to display information throughout the form.
 Author: Adrian Gordon
 Author URI: http://www.itsupportguides.com 
@@ -13,17 +13,27 @@ add_action('admin_notices', array('ITSP_GF_Infobox', 'admin_warnings'), 20);
 if (!class_exists('ITSP_GF_Infobox')) {
     class ITSP_GF_Infobox
     {
-	private static $name = 'Gravity Forms - Infobox field';
+	private static $name = 'Infobox field for Gravity Forms';
     private static $slug = 'itsp_gf_infobox_field';
-	private static $version = '1.2.4';
+	private static $version = '1.2.5';
         /**
          * Construct the plugin object
          */
         public function __construct()
         {
-            // register actions
+			// register plugin functions through 'plugins_loaded' -
+			// this delays the registration until all plugins have been loaded, ensuring it does not run before Gravity Forms is available.
+            add_action( 'plugins_loaded', array(&$this,'register_actions') );
+
+        } // END __construct
+        
+		/*
+         * Register plugin functions
+         */
+		function register_actions() {
+		// register actions
             if (self::is_gravityforms_installed()) {
-                //start plug in
+				//start plug in
                 add_filter('gform_add_field_buttons', array(&$this,'infobox_add_field') );
 				add_filter('gform_field_type_title' , array(&$this,'infobox_title'), 10, 2);
 				add_action('gform_editor_js', array(&$this,'infobox_editor_js'));
@@ -33,9 +43,9 @@ if (!class_exists('ITSP_GF_Infobox')) {
 				add_action('gform_field_css_class', array(&$this,'infobox_custom_class'), 10, 3);
 				add_action('gform_enqueue_scripts', array(&$this,'infobox_custom_js'), 90, 3);
 				add_filter('gform_field_content', array(&$this,'infobox_display_field'), 10, 5);
-            }
-        } // END __construct
-        
+			}
+		} // END register_actions
+		
         /**
          * Add infobox field to 'standard fields' group in Gravity Forms forms editor
          */        
@@ -46,6 +56,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
                     $group["fields"][] = array(
                         "class" => "button",
                         "value" => __("Infobox", "gravityforms"),
+						"data-type" => "Infobox", 
                         "onclick" => "StartAddField('Infobox');"
                     );
                     break;
@@ -129,7 +140,7 @@ if (!class_exists('ITSP_GF_Infobox')) {
 												<?php _e("More information", "gravityforms"); ?>
 												<?php gform_tooltip("infobox_more_info_field_tooltip");?>
 												</label>
-												<textarea id="infobox_more_info_field" class="fieldwidth-3 fieldheight-2" onkeyup="SetFieldProperty('infobox_more_info_field', this.value);"></textarea>
+												<textarea id="infobox_more_info_field" class="fieldwidth-3 fieldheight-2" onchange="SetFieldProperty('infobox_more_info_field', this.value);"></textarea>
 											</li>
 											
 											
@@ -196,8 +207,8 @@ if (!class_exists('ITSP_GF_Infobox')) {
          */
         public static function infobox_custom_js_script()
         {
+			wp_enqueue_style('list_field_sortable_style',  plugins_url( '/css/itsp_infobox_css.css', __FILE__ ));
 ?>
-			<link rel="stylesheet" type="text/css" href="<?php echo plugins_url('itsp_infobox_css.css', __FILE__);?>" media="all" />
 				<script>
 				jQuery(function ($) {
 				$('[class*=gfield_infobox_more_info_]').on('click',function(e){
@@ -254,7 +265,8 @@ if (!class_exists('ITSP_GF_Infobox')) {
 				</p>
 			</div>
 			<?php
-		}
+		} // END admin_warnings
+		
         /*
          * Check if GF is installed
          */
