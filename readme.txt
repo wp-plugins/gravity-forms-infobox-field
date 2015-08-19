@@ -1,9 +1,9 @@
 === Infobox field for Gravity Forms ===
 Contributors: ovann86
 Donate link: http://www.itsupportguides.com/
-Tags: gravity forms
-Requires at least: 4.1
-Tested up to: 4.2.4
+Tags: gravity forms, wcag, accessibility, forms
+Requires at least: 4.2
+Tested up to: 4.3
 Stable tag: 1.3.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,11 +12,22 @@ Extends the Gravity Forms plugin - adding an infobox field that can be used to d
 
 == Description ==
 
+> This plugin is an add-on for the <a href="https://www.e-junkie.com/ecom/gb.php?cl=54585&c=ib&aff=299380" target="_blank">Gravity Forms</a>. If you don't yet own a license of the best forms plugin for WordPress, go and <a href="https://www.e-junkie.com/ecom/gb.php?cl=54585&c=ib&aff=299380" target="_blank">buy one now</a>!
+
 This plugin extends the Gravity Forms plugin - adding an infobox field that can be used to display information throughout the form.
 
 Infoboxes can be placed anywhere in a form, like you would any other form field.
 
-Each infobox can be styled using the 'Infobox type' field, options include  - help, note, critical, warning, information and highlight.
+Each infobox can be styled using the 'Infobox type' field, options include:
+
+* help
+* note
+* critical
+* warning
+* information 
+* highlight
+
+> See a demo of this plugin at [http://demo.itsupportguides.com/gravity-forms-infobox-field/](http://demo.itsupportguides.com/gravity-forms-infobox-field/ "demo website")
 
 == Installation ==
 
